@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Twibooru Paste Enhancements
 // @description  Configurable paste appearance
-// @version      1.0.0
+// @version      1.0.1
 // @author       Marker
 // @license      WTFPL
 // @namespace    https://github.com/marktaiwan/
@@ -12,7 +12,7 @@
 // @inject-into  content
 // @run-at       document-start
 // @noframes
-// @require      https://raw.githubusercontent.com/soufianesakhi/node-creation-observer-js/master/release/node-creation-observer-1.2.js
+// @require      https://raw.githubusercontent.com/soufianesakhi/node-creation-observer-js/master/release/node-creation-observer-latest.js
 // ==/UserScript==
 
 (function () {
@@ -263,5 +263,6 @@ function initPaste(content) {
 }
 
 /* global NodeCreationObserver */
+NodeCreationObserver.init('paste-enhancements-observer');
 NodeCreationObserver.onCreation('.paste-content', initPaste, true);
 })();
